@@ -22,6 +22,16 @@ public class Tracker{
 		this.lastUpdate = System.currentTimeMillis();
 	}
 	
+	public Tracker(Tracker tracker) {
+		this.id = tracker.getId();
+		this.x = tracker.getX();
+		this.y = tracker.getY();
+		this.velocity = tracker.getVelocity();
+		this.heading = tracker.getHeading();
+		this.sizeClass = tracker.getSize();
+		this.lastUpdate = System.currentTimeMillis();
+	}
+	
 	public void advance(double hours) {
 		this.x += hours * (velocity * Math.cos(heading));
 		this.y += hours * (velocity * Math.sin(heading));
@@ -36,6 +46,7 @@ public class Tracker{
 	public int getId() {return this.id;}
 	public double getX() {return this.x;}
 	public double getY() {return this.y;}
+	public double getVelocity() {return this.velocity;}
 	public double getHeading() {return this.heading;}
 	public sizeClass getSize() {return this.sizeClass;}
 	public threatType getThreat() {return this.threatType;}
