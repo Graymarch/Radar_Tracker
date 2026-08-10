@@ -6,7 +6,6 @@ public class ConsoleLogger implements TrackObserver{
 
 	@Override
 	public void onTrackUpdate(Tracker tracker) {
-		// TODO Auto-generated method stub
-		
+		System.out.println(tracker.toString());
 	}
 }

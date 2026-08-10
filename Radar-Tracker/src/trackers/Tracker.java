@@ -28,6 +28,11 @@ public class Tracker{
 		this.lastUpdate = System.currentTimeMillis();
 	}
 	
+	public String toString() {
+		return String.format("[Object %d]: Location-(%f, %f), Velocity-%f ft/s, Heading-%f degrees, Size-%s", 
+				this.id, this.x, this.y, this.velocity, (this.heading * (180/Math.PI)), this.sizeClass);
+	}
+	
 	public int getId() {return this.id;}
 	public double getX() {return this.x;}
 	public double getY() {return this.y;}
