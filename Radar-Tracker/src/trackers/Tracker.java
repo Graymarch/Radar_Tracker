@@ -32,9 +32,9 @@ public class Tracker{
 		this.lastUpdate = System.currentTimeMillis();
 	}
 	
-	public void advance(double hours) {
-		this.x += hours * (velocity * Math.cos(heading));
-		this.y += hours * (velocity * Math.sin(heading));
+	public void advance(double seconds) {
+		this.x += seconds * (velocity * Math.cos(heading));
+		this.y += seconds * (velocity * Math.sin(heading));
 		this.lastUpdate = System.currentTimeMillis();
 	}
 	

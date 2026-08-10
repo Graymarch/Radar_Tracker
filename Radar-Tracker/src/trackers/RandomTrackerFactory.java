@@ -16,7 +16,7 @@ public class RandomTrackerFactory implements TrackerFactory{
         double x = rnd.nextDouble(-50, 50);      // nm
         double y = rnd.nextDouble(-50, 50);      // nm
         double heading = rnd.nextDouble(0, 2 * Math.PI); //radians
-        double velocity = rnd.nextDouble(80, 550);  // knots: airliner to fast jet
+        double velocity = rnd.nextDouble(80, 960);  // knots: airliner to fast jet
         sizeClass size = sizeOptions[rnd.nextInt(sizeOptions.length)];
         
 		return new Tracker(nextId.getAndIncrement(), x, y, velocity, heading, size);
