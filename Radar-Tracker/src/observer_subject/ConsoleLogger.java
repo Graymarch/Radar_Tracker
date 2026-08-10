@@ -1,6 +1,6 @@
 package observer_subject;
 
-import classes.Tracker;
+import trackers.Tracker;
 
 public class ConsoleLogger implements TrackObserver{
 

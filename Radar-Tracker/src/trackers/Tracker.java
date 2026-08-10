@@ -1,4 +1,4 @@
-package classes;
+package trackers;
 
 import enums.*;
 
@@ -12,14 +12,14 @@ public class Tracker{
 	private threatType threatType;
 	private long lastUpdate;
 	
-	public Tracker(int id, double x, double y, double velocity, double heading, sizeClass sizeClass, long lastUpdate) {
+	public Tracker(int id, double x, double y, double velocity, double heading, sizeClass sizeClass) {
 		this.id = id;
 		this.x = x;
 		this.y = y;
 		this.velocity = velocity;
 		this.heading = heading;
 		this.sizeClass = sizeClass;
-		this.lastUpdate = lastUpdate;
+		this.lastUpdate = System.currentTimeMillis();
 	}
 	
 	public void advance(double hours) {
