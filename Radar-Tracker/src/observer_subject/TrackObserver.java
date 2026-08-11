@@ -2,6 +2,6 @@ package observer_subject;
 
 import trackers.Tracker;
 
-interface TrackObserver{
+public interface TrackObserver{
 	public void onTrackUpdate(Tracker track);
 }

@@ -1,12 +1,14 @@
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.junit.jupiter.api.Test;
+
 import observer_subject.*;
-import trackers.*;
+import trackers.Tracker;
+import trackers.TrackerFactory;
 
 public class SimulatorTest {
     @Test
@@ -35,10 +37,10 @@ public class SimulatorTest {
         sim.tick();
         sim.tick();
 
-        assertTrue("Expected at least two broadcasts across two ticks", observed.size() >= 2);
+        assertTrue(observed.size() >= 2, "Expected at least two broadcasts across two ticks");
 
         double firstX = observed.get(0).getX();
         double lastX = observed.get(observed.size() - 1).getX();
-        assertTrue("Tracker X position should increase after subsequent ticks", lastX > firstX);
+        assertTrue(lastX > firstX,"Tracker X position should increase after subsequent ticks");
     }
 }

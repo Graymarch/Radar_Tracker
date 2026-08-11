@@ -1,12 +1,13 @@
 package observer_subject;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import trackers.Tracker;
+import org.junit.jupiter.api.Test;
+
 import enums.sizeClass;
+import trackers.Tracker;
 
 public class TrackerBroadcasterTest {
     @Test

@@ -1,13 +1,14 @@
 package observer_subject;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import trackers.Tracker;
+import org.junit.jupiter.api.Test;
+
 import enums.sizeClass;
+import trackers.Tracker;
 
 public class ConsoleLoggerTest {
     @Test

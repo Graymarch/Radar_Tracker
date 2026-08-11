@@ -1,7 +1,8 @@
 package trackers;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 import enums.sizeClass;
 
@@ -13,7 +14,7 @@ public class RandomTrackerFactoryTest {
         Tracker b = f.createTracker();
         assertNotNull(a);
         assertNotNull(b);
-        assertTrue("IDs should increase", b.getId() > a.getId());
+        assertTrue(b.getId() > a.getId(), "IDs should increase");
         assertTrue(a.getVelocity() >= 80.0 && a.getVelocity() <= 960.0);
         assertTrue(a.getX() >= -50.0 && a.getX() <= 50.0);
         assertTrue(a.getY() >= -50.0 && a.getY() <= 50.0);

@@ -1,13 +1,14 @@
 package observer_subject;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import trackers.Tracker;
+import org.junit.jupiter.api.Test;
+
 import enums.sizeClass;
+import trackers.Tracker;
 
 public class DefaultAnalyzerTest {
     @Test
@@ -27,6 +28,6 @@ public class DefaultAnalyzerTest {
         }
 
         String printed = out.toString();
-        assertTrue("Expected anomaly message to be printed", printed.contains("Anomaly") || printed.contains("Speed Anomaly"));
+        assertTrue(printed.contains("Anomaly") || printed.contains("Speed Anomaly"), "Expected anomaly message to be printed");
     }
 }
