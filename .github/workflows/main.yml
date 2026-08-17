@@ -17,8 +17,12 @@ jobs:
           distribution: temurin
           java-version: '23'
           cache: maven
+
+      - name: Debug - list files
+        run: ls -la
           
       - name: Run Tests
+        working-directory: ./Radar-Tracker
         run: mvn test
         
       - name: Display Test Results
@@ -26,6 +30,6 @@ jobs:
         if: ${{!cancelled()}}
         with:
           name: JUnit Tests
-          path: '**/target/surefire-reports/*.xml'
+          path: 'Radar-Tracker/**/target/surefire-reports/*.xml'
           reporter: java-junit
   
