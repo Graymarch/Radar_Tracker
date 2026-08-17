@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import trackers.Tracker;
 
-public class TrackerBroadcaster{
+//Broadcasters can have TrackObserver objects subscribed to them. 
+//Whenever broadcast is executed, all observers execute their onTrackUpdate method. 
+public class TrackerBroadcaster{ 
 	private final ArrayList<TrackObserver> observers = new ArrayList<>();
 	
 	public boolean subscribe(TrackObserver observer) {
