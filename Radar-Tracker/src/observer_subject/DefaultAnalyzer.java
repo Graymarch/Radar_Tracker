@@ -24,7 +24,12 @@ public class DefaultAnalyzer implements TrackObserver{
 	
 	public void speedAnalysis(Tracker tracker) {
 		int[] speedRange = speedThresholds.get(tracker.getSize());
-		double speed = tracker.getVelocity();
+		Tracker prev = previousStates.get(tracker.getId());
+		
+		double velocityX = (tracker.getX() - prev.getX()) / 0.5;
+		double velocityY = (tracker.getY() - prev.getY()) / 0.5;
+		double speed = Math.hypot(velocityX, velocityY);
+		
 		if(speed < speedRange[0] || speed > speedRange[1]) {
 			reportAnomaly(tracker.getId(), String.format("Speed Anomaly. Expected range %d ft/s - %d ft/s. Actual speed: %f ft/s.", speedRange[0], speedRange[1], speed));
 		}

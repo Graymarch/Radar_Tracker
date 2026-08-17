@@ -8,7 +8,7 @@ public class Tracker{
 	private double y;
 	private double heading;
 	private double velocity;
-	private sizeClass sizeClass; 
+	private final sizeClass sizeClass; 
 	private threatType threatType;
 	private long lastUpdate;
 	
@@ -39,18 +39,18 @@ public class Tracker{
 	}
 	
 	public String toString() {
-		return String.format("[Object %d]: Location-(%f, %f), Velocity-%f ft/s, Heading-%f degrees, Size-%s", 
-				this.id, this.x, this.y, this.velocity, (this.heading * (180/Math.PI)), this.sizeClass);
+		return "[Object %d]: Location-(%f, %f), Velocity-%f ft/s, Heading-%f degrees, Size-%s".formatted(this.id, this.x, this.y, this.velocity, (this.heading * (180/Math.PI)), this.sizeClass);
 	}
 	
 	public int getId() {return this.id;}
 	public double getX() {return this.x;}
 	public double getY() {return this.y;}
-	public double getVelocity() {return this.velocity;}
-	public double getHeading() {return this.heading;}
 	public sizeClass getSize() {return this.sizeClass;}
 	public threatType getThreat() {return this.threatType;}
 	public long getLastUpdate() {return this.lastUpdate;}
+	
+	protected double getHeading() {return this.heading;}
+	protected double getVelocity() {return this.velocity;}
 	
 	public void setThreat(threatType threatType) {this.threatType = threatType;}
 

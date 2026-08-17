@@ -36,7 +36,7 @@ public class Simulator{
 	
 	public void stop() {
 		scheduler.shutdown();
-		computePool.shutdown();
+		computePool.shutdownNow();
 	}
 	
 	public void tick() {
@@ -66,9 +66,9 @@ public class Simulator{
             return;
         }
         
-        for (Tracker tracker : activeTrackers) {
+        activeTrackers.forEach(tracker -> {
             broadcaster.broadcast(tracker);
-        }
+        });
 	}
 	
 	private void maybeSpawnTrack() {
