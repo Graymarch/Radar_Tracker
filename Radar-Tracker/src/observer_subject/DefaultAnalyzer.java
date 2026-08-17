@@ -34,8 +34,4 @@ public class DefaultAnalyzer implements TrackObserver{
 			reportAnomaly(tracker.getId(), String.format("Speed Anomaly. Expected range %d ft/s - %d ft/s. Actual speed: %f ft/s.", speedRange[0], speedRange[1], speed));
 		}
 	}
-	
-	public void reportAnomaly(int id, String description) {
-		System.out.println(String.format("[Anomaly]: Track-%d, Description: %s", id, description));
-	}
 }

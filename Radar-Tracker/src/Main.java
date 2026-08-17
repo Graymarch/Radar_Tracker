@@ -5,9 +5,16 @@ import trackers.*;
 
 public class Main{
 	public static void main(String[] args) throws InterruptedException {
+		SiteProtectionAnalyzer siteAnalyzer = new SiteProtectionAnalyzer();
+		siteAnalyzer.addSite(1000, 1000);
+		siteAnalyzer.addSite(-1000, 1000);
+		siteAnalyzer.addSite(1000, -1000);
+		siteAnalyzer.addSite(-1000, -1000);
+		
 		TrackerBroadcaster broadcaster = new TrackerBroadcaster();
 		broadcaster.subscribe(new ConsoleLogger());
 		broadcaster.subscribe(new DefaultAnalyzer());
+		broadcaster.subscribe(siteAnalyzer);
 		
 		TrackerFactory factory = new RandomTrackerFactory();
 		

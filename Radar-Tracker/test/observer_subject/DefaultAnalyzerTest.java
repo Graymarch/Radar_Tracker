@@ -50,6 +50,6 @@ public class DefaultAnalyzerTest {
         }
 
         String printed = out.toString();
-        assertTrue(!printed.contains("Anomaly") && !printed.contains("Speed Anomaly"), "No anomaly should be ");
+        assertTrue(!printed.contains("Anomaly") && !printed.contains("Speed Anomaly"), "No anomaly should be reported.");
     }
 }
