@@ -43,4 +43,5 @@ public class SimulatorTest {
         double lastX = observed.get(observed.size() - 1).getX();
         assertTrue(lastX > firstX,"Tracker X position should increase after subsequent ticks");
     }
+//    Add comment for testing
 }
