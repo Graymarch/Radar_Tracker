@@ -17,6 +17,9 @@ jobs:
           distribution: temurin
           java-version: '23'
           cache: maven
+
+      - name: Debug - list files
+        run: ls -la
           
       - name: Run Tests
         run: mvn test
